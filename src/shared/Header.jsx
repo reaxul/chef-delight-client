@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import { Container,Button } from 'react-bootstrap';
+import ActiveRoute from '../components/ActiveRoute';
+import { AuthContext } from '../provider/AuthProvider';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 const Header = () => {
+    const user = useContext(AuthContext);
+    const navigate = useNavigate();
     return (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
@@ -12,14 +17,18 @@ const Header = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mx-auto">
-            <Nav.Link href="#features">Home</Nav.Link>
-            <Nav.Link href="#pricing">Blog</Nav.Link>
+                        <Nav.Link>
+                            <ActiveRoute>Home</ActiveRoute>
+            </Nav.Link>
+                        <Nav.Link>
+                            <ActiveRoute to={'/blog'}>Blog</ActiveRoute>
+            </Nav.Link>
             
           </Nav>
           <Nav>
             <Nav.Link href="#deets">Profile</Nav.Link>
             <Nav.Link eventKey={2} href="#memes">
-            <Button variant="warning">Login</Button>
+           <Link to={'/login'}> <Button variant="warning">Login</Button></Link>
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
