@@ -16,13 +16,13 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:3000/chef"),
+        loader: () => fetch("https://chef-s-delight-server-reaxul.vercel.app/chef"),
       },
       {
         path: "/chef-recipe/:id",
         element: <PrivateRoute><ChefRecipe></ChefRecipe></PrivateRoute>,
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/chef-recipe/${params.id}`),
+          fetch(`https://chef-s-delight-server-reaxul.vercel.app/chef-recipe/${params.id}`),
       },
       {
         path: "/blog",
