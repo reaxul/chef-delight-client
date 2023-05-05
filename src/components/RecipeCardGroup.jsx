@@ -9,7 +9,7 @@ const RecipeCardGroup = ({ recipes }) => {
           <Card.Img variant="top" src={recipe.image} />
           <Card.Body>
             <Card.Title>{recipe.name}</Card.Title>
-            <Card.Text>
+            
               <h6>Ingredients:</h6>
               <ul>
                 {recipe.ingredients.map((ingredient, index) => (
@@ -20,7 +20,7 @@ const RecipeCardGroup = ({ recipes }) => {
               <p>{recipe.method}</p>
               <h6>Rating:</h6>
               <p>{recipe.rating}</p>
-            </Card.Text>
+            
             <Button variant="primary">Favorite</Button>
           </Card.Body>
         </Card>
