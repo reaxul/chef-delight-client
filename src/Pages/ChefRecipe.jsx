@@ -20,7 +20,7 @@ const ChefRecipe = () => {
         </Col>
       </Row>
           </Container>
-          <RecipeCardGroup recipes={chef}></RecipeCardGroup>
+          <RecipeCardGroup recipes={chef.recipes}></RecipeCardGroup>
     </div>
   );
 };
