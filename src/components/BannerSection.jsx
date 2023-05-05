@@ -5,7 +5,8 @@ const BannerSection = () => {
   return (
     <Carousel fade>
       <Carousel.Item>
-        <img
+              <img
+                  style={{ height: "600px", objectFit: "cover" }}
           className="d-block w-100"
           src="https://www.themealdb.com/images/media/meals/ustsqw1468250014.jpg"
           alt="First slide"
@@ -16,7 +17,8 @@ const BannerSection = () => {
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <img
+              <img
+                  style={{ height: "600px", objectFit: "cover" }}
           className="d-block w-100"
           src="https://www.themealdb.com/images/media/meals/58oia61564916529.jpg"
           alt="Second slide"
@@ -27,7 +29,8 @@ const BannerSection = () => {
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <img
+              <img
+                  style={{ height: "600px", objectFit: "cover" }}
           className="d-block w-100"
           src="https://www.themealdb.com/images/media/meals/urzj1d1587670726.jpg"
           alt="Third slide"
