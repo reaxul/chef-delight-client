@@ -1,6 +1,6 @@
 import React from "react";
 import BannerSection from "../components/BannerSection";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { Button, Card, Col, Row } from "react-bootstrap";
 
 const Home = () => {
@@ -8,7 +8,11 @@ const Home = () => {
   return (
     <div>
       <BannerSection></BannerSection>
-      <Row className="justify-content-center container mx-auto">
+          <Row className="justify-content-center container mx-auto">
+              <div className="text-center my-5">
+              <h3>Meet Our Culinary Team</h3>
+              <p>Meet our talented chefs and discover their delicious creations</p>
+              </div>
         {chefs.map((chef, index) => (
           <Col md={4} key={index}>
             <Card className="mb-4">
@@ -20,7 +24,7 @@ const Home = () => {
                   {chef.recipes} recipes <br />
                   {chef.likes} likes
                 </Card.Text>
-                <Button variant="primary">View Recipes</Button>
+                <Link to={`/chef-recipe/${chef.id}`}><Button variant="warning">View Recipes</Button></Link>
               </Card.Body>
             </Card>
           </Col>
